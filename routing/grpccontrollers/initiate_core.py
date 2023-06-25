@@ -1,10 +1,10 @@
 # import grpc
-# from config_routing.models import PebMerchantInfo, PebSubMerchantInfo
+# from routing.models import PebMerchantInfo, PebSubMerchantInfo
 # from django_socio_grpc import generics
 # from google.protobuf import empty_pb2
 # from google.protobuf.json_format import MessageToDict
-# from config_routing.serializers.pebmerchantinfo import PebMerchantProtoSerializer
-# from config_routing.serializers.pebsubmerchantinfo import PebSubMerchantInfoProtoSerializer
+# from routing.serializers.pebmerchantinfo import PebMerchantProtoSerializer
+# from routing.serializers.pebsubmerchantinfo import PebSubMerchantInfoProtoSerializer
 
 
 # #all the crud operations 

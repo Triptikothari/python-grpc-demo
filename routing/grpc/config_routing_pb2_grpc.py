@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from config_routing.grpc import config_routing_pb2 as config__routing_dot_grpc_dot_config__routing__pb2
+from routing.grpc import routing_pb2 as config__routing_dot_grpc_dot_config__routing__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
@@ -16,27 +16,27 @@ class UserControllerStub(object):
             channel: A grpc.Channel.
         """
         self.List = channel.unary_unary(
-                '/config_routing.UserController/List',
+                '/routing.UserController/List',
                 request_serializer=config__routing_dot_grpc_dot_config__routing__pb2.UserListRequest.SerializeToString,
                 response_deserializer=config__routing_dot_grpc_dot_config__routing__pb2.UserListResponse.FromString,
                 )
         self.Create = channel.unary_unary(
-                '/config_routing.UserController/Create',
+                '/routing.UserController/Create',
                 request_serializer=config__routing_dot_grpc_dot_config__routing__pb2.User.SerializeToString,
                 response_deserializer=config__routing_dot_grpc_dot_config__routing__pb2.User.FromString,
                 )
         self.Retrieve = channel.unary_unary(
-                '/config_routing.UserController/Retrieve',
+                '/routing.UserController/Retrieve',
                 request_serializer=config__routing_dot_grpc_dot_config__routing__pb2.UserRetrieveRequest.SerializeToString,
                 response_deserializer=config__routing_dot_grpc_dot_config__routing__pb2.User.FromString,
                 )
         self.Update = channel.unary_unary(
-                '/config_routing.UserController/Update',
+                '/routing.UserController/Update',
                 request_serializer=config__routing_dot_grpc_dot_config__routing__pb2.User.SerializeToString,
                 response_deserializer=config__routing_dot_grpc_dot_config__routing__pb2.User.FromString,
                 )
         self.Destroy = channel.unary_unary(
-                '/config_routing.UserController/Destroy',
+                '/routing.UserController/Destroy',
                 request_serializer=config__routing_dot_grpc_dot_config__routing__pb2.User.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
@@ -105,7 +105,7 @@ def add_UserControllerServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'config_routing.UserController', rpc_method_handlers)
+            'routing.UserController', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -124,7 +124,7 @@ class UserController(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/config_routing.UserController/List',
+        return grpc.experimental.unary_unary(request, target, '/routing.UserController/List',
             config__routing_dot_grpc_dot_config__routing__pb2.UserListRequest.SerializeToString,
             config__routing_dot_grpc_dot_config__routing__pb2.UserListResponse.FromString,
             options, channel_credentials,
@@ -141,7 +141,7 @@ class UserController(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/config_routing.UserController/Create',
+        return grpc.experimental.unary_unary(request, target, '/routing.UserController/Create',
             config__routing_dot_grpc_dot_config__routing__pb2.User.SerializeToString,
             config__routing_dot_grpc_dot_config__routing__pb2.User.FromString,
             options, channel_credentials,
@@ -158,7 +158,7 @@ class UserController(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/config_routing.UserController/Retrieve',
+        return grpc.experimental.unary_unary(request, target, '/routing.UserController/Retrieve',
             config__routing_dot_grpc_dot_config__routing__pb2.UserRetrieveRequest.SerializeToString,
             config__routing_dot_grpc_dot_config__routing__pb2.User.FromString,
             options, channel_credentials,
@@ -175,7 +175,7 @@ class UserController(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/config_routing.UserController/Update',
+        return grpc.experimental.unary_unary(request, target, '/routing.UserController/Update',
             config__routing_dot_grpc_dot_config__routing__pb2.User.SerializeToString,
             config__routing_dot_grpc_dot_config__routing__pb2.User.FromString,
             options, channel_credentials,
@@ -192,7 +192,7 @@ class UserController(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/config_routing.UserController/Destroy',
+        return grpc.experimental.unary_unary(request, target, '/routing.UserController/Destroy',
             config__routing_dot_grpc_dot_config__routing__pb2.User.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,

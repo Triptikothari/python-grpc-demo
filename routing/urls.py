@@ -1,7 +1,7 @@
 from rest_framework.urlpatterns import format_suffix_patterns
 from django.urls import path, include
 from rest_framework.routers import SimpleRouter
-from config_routing.controllers.test import TestController
+from routing.controllers.test import TestController
 
 router = SimpleRouter()
 

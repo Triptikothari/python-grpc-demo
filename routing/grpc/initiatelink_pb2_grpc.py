@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from config_routing.grpc import initiatelink_pb2 as config__routing_dot_grpc_dot_initiatelink__pb2
+from routing.grpc import initiatelink_pb2 as config__routing_dot_grpc_dot_initiatelink__pb2
 
 
 class InitiateLinkControllerStub(object):
@@ -15,12 +15,12 @@ class InitiateLinkControllerStub(object):
             channel: A grpc.Channel.
         """
         self.FetchMerchantData = channel.unary_unary(
-                '/config_routing.InitiateLinkController/FetchMerchantData',
+                '/routing.InitiateLinkController/FetchMerchantData',
                 request_serializer=config__routing_dot_grpc_dot_initiatelink__pb2.ListRequest.SerializeToString,
                 response_deserializer=config__routing_dot_grpc_dot_initiatelink__pb2.ListResponseMerchantData.FromString,
                 )
         self.FetchSubMerchantData = channel.unary_unary(
-                '/config_routing.InitiateLinkController/FetchSubMerchantData',
+                '/routing.InitiateLinkController/FetchSubMerchantData',
                 request_serializer=config__routing_dot_grpc_dot_initiatelink__pb2.ListRequest.SerializeToString,
                 response_deserializer=config__routing_dot_grpc_dot_initiatelink__pb2.ListResponseSubMerchantData.FromString,
                 )
@@ -56,7 +56,7 @@ def add_InitiateLinkControllerServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'config_routing.InitiateLinkController', rpc_method_handlers)
+            'routing.InitiateLinkController', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -75,7 +75,7 @@ class InitiateLinkController(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/config_routing.InitiateLinkController/FetchMerchantData',
+        return grpc.experimental.unary_unary(request, target, '/routing.InitiateLinkController/FetchMerchantData',
             config__routing_dot_grpc_dot_initiatelink__pb2.ListRequest.SerializeToString,
             config__routing_dot_grpc_dot_initiatelink__pb2.ListResponseMerchantData.FromString,
             options, channel_credentials,
@@ -92,7 +92,7 @@ class InitiateLinkController(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/config_routing.InitiateLinkController/FetchSubMerchantData',
+        return grpc.experimental.unary_unary(request, target, '/routing.InitiateLinkController/FetchSubMerchantData',
             config__routing_dot_grpc_dot_initiatelink__pb2.ListRequest.SerializeToString,
             config__routing_dot_grpc_dot_initiatelink__pb2.ListResponseSubMerchantData.FromString,
             options, channel_credentials,

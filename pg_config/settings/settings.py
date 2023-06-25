@@ -12,7 +12,7 @@ except ImportError:
             ['%s (Not able to connect AWS parameter store)' % e.args[0]])
         raise e
 # code for authorisation
-# from config_routing.urls import grpc_handlers
+# from routing.urls import grpc_handlers
 
 
 CACHES = {

@@ -1,7 +1,7 @@
 from typing import Any
 from rest_framework.response import Response
-from config_routing.shared.utility.custom_mixins import CustomResponseMixin
-from config_routing.services.test import TestService
+from routing.shared.utility.custom_mixins import CustomResponseMixin
+from routing.services.test import TestService
 
 
 class TestController(CustomResponseMixin):

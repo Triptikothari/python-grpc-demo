@@ -1,6 +1,6 @@
 *.pyc
 __pycache__/
-pg_config_routing/settings/local_parameter_store.py
-pg_config_routing/requirement.txt
+pg_routing/settings/local_parameter_store.py
+pg_routing/requirement.txt
 venv/
-pg_config_routing.log
+pg_routing.log

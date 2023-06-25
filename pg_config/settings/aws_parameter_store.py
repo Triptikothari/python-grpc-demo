@@ -30,7 +30,7 @@ region_parameter_store = {
 }
 
 
-from config_routing.shared.utility.amazon_parameter import AwsSystemManager
+from routing.shared.utility.amazon_parameter import AwsSystemManager
 
 parameter = AwsSystemManager()
 cache_parameter_value = parameter.get_ssm_key_data(parameter_name='/pgconfig/cache')

@@ -1,7 +1,7 @@
 import grpc
-from config_routing.models import User
+from routing.models import User
 from django_socio_grpc import generics
-from config_routing.serializers.user import UserProtoSerializer
+from routing.serializers.user import UserProtoSerializer
 from google.protobuf import empty_pb2
 
 #all the crud operations 

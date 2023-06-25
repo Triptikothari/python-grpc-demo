@@ -1,4 +1,4 @@
-from config_routing.shared.utility.redis import RedisAccessor
+from routing.shared.utility.redis import RedisAccessor
 
 class RedisHelper:
 

@@ -1,8 +1,8 @@
 from rest_framework.response import Response
 from rest_framework.renderers import JSONRenderer
 from rest_framework import status
-from pg_config.settings import bypass_authentication
-from config_routing.shared.utility.redis import RedisAccessor
+from grpc_config.settings import bypass_authentication
+from routing.shared.utility.redis import RedisAccessor
 
 
 class Authorization(object):

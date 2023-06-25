@@ -1,4 +1,4 @@
-"""pg_config URL Configuration
+"""grpc_config URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.1/topics/http/urls/
@@ -19,5 +19,5 @@ from django.conf.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include("config_routing.urls")),
+    path('api/', include("routing.urls")),
 ]
