@@ -1,0 +1,93 @@
+syntax = "proto3";
+
+package config_routing;
+
+
+service InitiateLinkController {
+    rpc FetchMerchantData(ListRequest) returns (ListResponseMerchantData) {}
+    rpc FetchSubMerchantData(ListRequest) returns (ListResponseSubMerchantData) {}
+}
+
+message ListRequest {
+    int32 merchant_id = 1;
+    int32 submerchant_id = 2;
+}
+
+message Merchant_Settings {
+    bool is_multilingual_parameters_enabled = 1;
+    bool enable_auto_otp = 2;
+    int32 enable_nach_paper_base = 3;
+    bool enable_seamless_payment = 4;
+    bool enable_seamless_payment_non_cards = 5;
+    int32 customer_success_status = 6;
+    int32 customer_failure_status = 7;
+    int32 customer_success_sms_status = 8;
+}
+
+
+message Gateway_Settings {
+    int32 enable_credit = 1;
+    int32 enable_debit = 2;
+    int32 enable_net_banking = 3;
+    int32 enable_cash_card = 4;
+    int32 enable_upi = 5;
+    int32 enable_save_card = 6;
+    int32 enable_emi = 7;
+    int32 enable_ola_money = 8;
+    int32 enable_direct_debit = 9;
+    int32 enable_enach = 10;
+    bool enable_simpl = 11;
+    string enach_category_code = 12;
+    bool is_ola_trusted_flow = 13;
+    string logo = 14;
+    bool auto_debit_auto_approve = 15;
+    bool enable_credit_corporate_card = 16;
+    bool enable_debit_corporate_card = 17;
+    bool enable_auto_refund = 18;
+    uint32 auto_refund_time = 19;
+    bool instant_refund_allowed = 20;
+    bool is_multiple_refund_allowed = 21;
+    bool differential_tdr_allowed = 22;
+    bool upi_collect_req = 23;
+    bool is_gateway_routing_enabled = 24;
+    int32 enable_auto_debit_upi = 25;
+    int32 enable_insta_collect = 26;
+    bool enable_insta_collect_challan = 27;
+    bool is_token_enable = 28;
+    double cashback_percentage = 29;
+    bool is_tdr_on_customer = 30;
+    bool split_payout_status = 31;
+    int32 enable_tpv = 32;
+    bool cashback_status = 33;
+    bool duplicate_txn_id_allowed = 34;
+}
+
+message ListResponseMerchantData {
+    int32 id = 1;
+    string name = 2;
+    string email = 3;
+    string key = 4;
+    string salt = 5;
+    string domain = 6;
+    int32 is_sub_aggregator = 7;
+    bool is_ip_white_list = 8;
+    string ip_white_list = 9;
+    bool can_process_payments = 10;
+    int32 is_deleted = 11;
+    string merchant_details =12;
+    Merchant_Settings merchant_settings = 13;   
+    Gateway_Settings gateway_settings = 14;
+}
+
+message ListResponseSubMerchantData {
+    int32 id = 1;
+    int32 submerchant_id = 2;
+    string email = 3;   
+    bool is_active = 4;
+    Gateway_Settings gateway_settings = 5;
+}
+
+
+
+
+

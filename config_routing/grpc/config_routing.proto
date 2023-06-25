@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package config_routing;
+
+import "google/protobuf/empty.proto";
+
+service UserController {
+    rpc List(UserListRequest) returns (UserListResponse) {}
+    rpc Create(User) returns (User) {}
+    rpc Retrieve(UserRetrieveRequest) returns (User) {}
+    rpc Update(User) returns (User) {}
+    rpc Destroy(User) returns (google.protobuf.Empty) {}
+}
+
+message User {
+    int32 id = 1;
+    string name = 600;
+    string email = 500;
+    string groups = 700;
+}
+
+message UserListRequest {
+}
+
+message UserListResponse {
+    repeated User results = 1;
+}
+
+message UserRetrieveRequest {
+    int32 id = 1;
+}
+
